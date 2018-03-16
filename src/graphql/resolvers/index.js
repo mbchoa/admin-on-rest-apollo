@@ -1,17 +1,19 @@
 import axios from 'axios';
+import { slice } from 'lodash';
 
 const resolveResponse = promise => promise.then(({ data }) => data);
 
 export default {
   Query: {
-    fetchAlbums() {
+    allAlbums() {
       return resolveResponse(axios.get('http://jsonplaceholder.typicode.com/albums'));
     },
-    fetchComments() {
+    allComments() {
       return resolveResponse(axios.get('http://jsonplaceholder.typicode.com/comments'));
     },
-    fetchPosts() {
-      return resolveResponse(axios.get('http://jsonplaceholder.typicode.com/posts'));
+    allPosts(root, { limit = 10, offset = 0 }) {
+      return resolveResponse(axios.get('http://jsonplaceholder.typicode.com/posts'))
+        .then(data => data);
     },
   },
 };

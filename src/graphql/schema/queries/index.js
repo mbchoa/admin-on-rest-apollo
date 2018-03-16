@@ -1,7 +1,7 @@
 export default `
   type Query {
-    fetchAlbums: [Album],
-    fetchComments: [Comment],
-    fetchPosts: [Post]
+    allAlbums: [Album],
+    allComments: [Comment],
+    allPosts: [Post]
   }
 `;
