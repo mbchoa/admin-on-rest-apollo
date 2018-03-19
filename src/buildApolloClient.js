@@ -34,11 +34,11 @@ export default (apolloClient) => {
         return apolloClient
             .query(buildQuery(type, resource, params))
             .then(response => {
-                const data = response.data[mapResourceTypeToResolver(type, resource)];
-                return {
+              const data = response.data[mapResourceTypeToResolver(type, resource)];
+              return {
                 data,
                 total: data.length,
-                };
+              };
             });
       default:
         throw new Error('Unsupported fetch type');
