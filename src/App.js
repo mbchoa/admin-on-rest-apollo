@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
 import ApolloClient from 'apollo-boost';
 import { Admin, Resource } from 'admin-on-rest';
-import { PostList, PostShow } from './components/Posts';
+
+import { getAPI, getHeaders } from './apolloClient/config';
+import buildApolloClient from './apolloClient/buildApolloClient';
+
 import { OrderList, OrderEdit, OrderShow } from './components/Orders';
-import { getAPI, getHeaders } from './api/config';
-import buildApolloClient from './buildApolloClient';
 
 const restClient = buildApolloClient(
   new ApolloClient({

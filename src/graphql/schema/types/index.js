@@ -6,17 +6,33 @@ export default `
     body: String
   }
 
-  type Comment {
-    postId: Int,
-    id: Int,
-    name: String,
-    email: String,
-    body: String
+  type LatLong {
+    lat: String,
+    lng: String
   }
 
-  type Album {
-    userId: Int,
+  type Company {
+    name: String,
+    catchPhrase: String,
+    bs: String
+  }
+
+  type Address {
+    street: String,
+    suite: String,
+    city: String,
+    zipcode: String,
+    geo: LatLong
+  }
+
+  type User {
     id: Int,
-    title: String
+    name: String,
+    username: String,
+    email: String,
+    address: Address
+    phone: String,
+    website: String,
+    company: Company
   }
 `;

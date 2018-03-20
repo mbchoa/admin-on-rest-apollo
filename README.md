@@ -2,20 +2,23 @@
 
 ## Directory Structure
 ```
-├── /build/                     # Client-side output build directory
-├── /src/                       # Top-level package
-│   ├── /components/            # Top-level React component package
-│   ├── /graphql/               # Backend GraphQL server package
-│   │   ├── /resolvers/         # GraphQL resolvers package
-│   │   ├── /schema/            # GraphQL schemas package
-│   │   │   ├── /mutations/     # GraphQL mutations
-│   │   │   ├── /queries/       # GraphQL queries
-│   │   │   ├── /types/         # GraphQL schema types
-│   │   ├── index.js            # Server-side entry point
+├── /build/                                 # Client-side output build directory
+├── /src/                                   # Top-level package
+│   ├── /apolloClient/                      # Top-level React component package
+│   │   ├── buildApolloClient.js            # Helper file to build REST to GraphQL Apollo Client
+│   │   ├── buildQuery.js                   # Helper file to build queries based on resource type
+│   │   ├── mapResourceTypeToResolver.js    # Helper file to map resource type to GraphQL resolver names
+│   ├── /components/                        # Top-level React component package
+│   ├── /graphql/                           # Backend GraphQL server package
+│   │   ├── /resolvers/                     # GraphQL resolvers package
+│   │   ├── /schema/                        # GraphQL schemas package
+│   │   │   ├── /mutations/                 # GraphQL mutations
+│   │   │   ├── /queries/                   # GraphQL queries
+│   │   │   ├── /types/                     # GraphQL schema types
+│   │   ├── index.js                        # Server-side entry point
 │   │   └── ...
-│   ├── App.js                  # Root React component
-│   ├── buildApolloClient.js    # Utility methods to build AoR Apollo client
-│   └── index.js                # Client-side entry point
+│   ├── App.js                              # Root React component
+│   └── index.js                            # Client-side entry point
 ```
 
 ## Getting Started
