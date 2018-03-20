@@ -3,8 +3,7 @@ import {
     Show,
     SimpleShowLayout,
     TextField,
-    DateField,
-    EditButton, 
+    EditButton,
     RichTextField
 } from 'admin-on-rest';
 
