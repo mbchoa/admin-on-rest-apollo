@@ -66,4 +66,4 @@ const oneOrder = ({ id }) => ({
 export default {
   allOrders,
   oneOrder,
-}
+};
