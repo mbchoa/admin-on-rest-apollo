@@ -1,22 +1,22 @@
 import React from 'react';
 import {
-    FullNameField,
-    Edit,
-    TabbedForm,
-    TextInput,
-    FormTab,
+  Edit,
+  FullNameField,
+  SimpleForm,
+  TextInput,
 } from 'admin-on-rest';
 
 const OrderTitle = ({ title }) => title ? <FullNameField record={title} size={32} /> : null;
 
 const OrderEdit = props => (
-  <Edit title={<OrderTitle title="title here"/>} {...props}>
-    <TabbedForm>
-      <FormTab>
-        <TextInput source="orderId" style={{ display: 'inline-block' }} />
-        <TextInput source="street2" style={{ display: 'inline-block', marginLeft: 32 }} />
-      </FormTab>
-    </TabbedForm>
+  <Edit title="Edit Order" {...props}>
+    <SimpleForm>
+        <TextInput source="shippingAddress.street1" label="Street 1" />
+        <TextInput source="shippingAddress.street2" label="Street 2" />
+        <TextInput source="shippingAddress.city" label="City" />
+        <TextInput source="shippingAddress.state" label="State" />
+        <TextInput source="shippingAddress.zip" label="Zip" />
+    </SimpleForm>
   </Edit>
 );
 
