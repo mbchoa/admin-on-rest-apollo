@@ -17,8 +17,7 @@ export default (type, resource) => {
   switch (type) {
     case GET_LIST:
     case GET_MANY:
-    case GET_MANY_REFERENCE:
-        return `all${pluralize(normalizedResourceName)}`;
+    case GET_MANY_REFERENCE: return `all${pluralize(normalizedResourceName)}`;
     case GET_ONE: return `one${normalizedResourceName}`;
     case CREATE: return `create${normalizedResourceName}`;
     case DELETE: return `delete${normalizedResourceName}`;
