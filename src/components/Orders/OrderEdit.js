@@ -4,6 +4,7 @@ import {
   FullNameField,
   SimpleForm,
   TextInput,
+  BooleanInput
 } from 'admin-on-rest';
 
 const OrderTitle = ({ title }) => title ? <FullNameField record={title} size={32} /> : null;
@@ -11,6 +12,7 @@ const OrderTitle = ({ title }) => title ? <FullNameField record={title} size={32
 const OrderEdit = props => (
   <Edit title="Edit Order" {...props}>
     <SimpleForm>
+        <BooleanInput source="isCancelled"/>
         <TextInput source="shippingAddress.street1" label="Street 1" />
         <TextInput source="shippingAddress.street2" label="Street 2" />
         <TextInput source="shippingAddress.city" label="City" />
