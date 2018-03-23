@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import ApolloClient from 'apollo-boost';
 import { Admin, Resource } from 'admin-on-rest';
+import { isNil } from 'lodash';
 
 import { getAPI, getHeaders } from './apolloClient/config';
 import buildApolloClient from './apolloClient/buildApolloClient';
@@ -52,7 +53,7 @@ class App extends Component {
     const urlParams = new URLSearchParams(window.location.search)
     const inf = urlParams.get('inf')
 
-    if (token === 'undefined') {
+    if (isNil(token)) {
       if (!inf) {
         console.warn('!inf')
         fetchAuthInfToken()
