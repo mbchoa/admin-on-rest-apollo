@@ -1,5 +1,4 @@
 import gql from 'graphql-tag';
-import { omit, forIn, isObject } from 'lodash'
 
 const allOrders = ({ pagination: { page, perPage }}) => ({
   query: gql`
@@ -32,6 +31,16 @@ const oneOrder = ({ id }) => ({
   query: gql`
     query ($id:String) {
       oneOrder (id:$id) {
+        user {
+          userId
+		  firstName
+          lastName
+          email
+          phoneNumber
+          isVip
+          birthdate
+          lastLogin      
+        }
         id
         orderId
         isHto
@@ -52,19 +61,7 @@ const oneOrder = ({ id }) => ({
   variables: { id },
 });
 
-const updateOrder = (props) => {
-  console.warn('input props', props)
-
-  let {data} = props
-  console.warn('dat')
-  data = omit(data, ["__typename"])
-  forIn(data, (value, key) => {
-    if (isObject(value)) {
-      data[key] = omit(value, ["__typename"])
-    }
-  })
-  console.warn('mutation input omitted __typename', data)
-
+const updateOrder = ({ data }) => {
   return {
     mutation: gql`
       mutation ($input: UpdateOrderInputType) {
