@@ -1,6 +1,6 @@
 import React from 'react';
-import { List, Datagrid, NumberField, DateField, TextField, BooleanField, AutocompleteInput, ReferenceInput } from 'admin-on-rest';
-import { EditButton, RefField } from '../Reusable'
+import { List, Datagrid, NumberField, DateField, TextField, BooleanField } from 'admin-on-rest';
+import { EditButton } from '../Reusable'
 
 const EventList = (props) => (
     <List {...props} perPage={20}>

@@ -1,4 +1,4 @@
-import { get, includes, invoke } from 'lodash';
+import { includes, invoke } from 'lodash';
 import { CREATE, DELETE, GET_LIST, GET_MANY, GET_ONE, GET_MANY_REFERENCE, QUERY_TYPES, UPDATE } from './types';
 
 import mapResourceTypeToResolver from './mapResourceTypeToResolver';
